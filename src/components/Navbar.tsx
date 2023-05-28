@@ -2,6 +2,7 @@ import React from "react";
 import "../styles/Boutton.css";
 //import LoginButton from "../pages/Connexion";
 import tokenIsValid from "../middleware/tokenIsValid";
+import logoMeteore from "../img/logo_meteore_blanc.png";
 
 export default function Navbar() {
   var LoginOrLogoutButton = LogoutButton;
@@ -15,7 +16,8 @@ export default function Navbar() {
 
   return (
     <nav className="navbar">
-      <div className="titreNavbar">StockMaster</div>
+      <img src={logoMeteore} className="logoMeteore" alt="logoMeteore" />
+      <div className="titreNavbar">Météore</div>
       <div className="navbar-links">
         <a href="/">Accueil</a>
         <a href="/">A propos</a>

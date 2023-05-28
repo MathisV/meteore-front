@@ -1,0 +1,17 @@
+/* style du map-container */
+
+:root {
+    --offset: 20px;
+}
+
+.map-container {
+    width: 500px;
+    height: 800px;
+    position: absolute;
+    top: calc(50% + var(--offset));
+    left: 20px;
+    transform: translateY(-50%);
+    border-radius: 8px;
+    border: 2px solid #ddd;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}

@@ -1,27 +1,32 @@
 import React from "react";
+import icon_soleil from "../img/icon_soleil.png";
+import icon_precipitation from "../img/icon_pluie.png";
+import icon_humidite from "../img/icon_humidite.png";
+import "../styles/Card.css";
 
 type CardProps = {
-  imageSrc: string;
-  imgAlt: string;
   title: string;
-  symbol: string;
-  price: number;
+  value: string;
+  icon: string;
+  valueMin: string;
+  valueMax: string;
 };
 
 const Card: React.FC<CardProps> = ({
-  imageSrc,
-  imgAlt,
   title,
-  symbol,
-  price,
+  value,
+  icon,
+  valueMin,
+  valueMax,
 }) => {
   return (
     <div className="card">
-      <img src={imageSrc} className="card-img-top" alt={imgAlt} />
       <div className="card-body">
         <h5 className="card-title">{title}</h5>
-        <p className="card-text">{symbol}</p>
-        <p className="card-text">${price}</p>
+        <p className="card-temperature">{value}</p>
+        <img src={icon_soleil} className="card-icon" alt={icon} />
+        <p className="temperatureMin">{valueMin}</p>
+        <p className="temperatureMax">{valueMax}</p>
       </div>
     </div>
   );

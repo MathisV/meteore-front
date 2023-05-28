@@ -1,8 +1,15 @@
 import React from "react";
 import "../styles/style.css";
+import "../styles/Card.css";
 import "../styles/Navbar.css";
 import Card from "../components/Card";
 import tokenIsValid from "../middleware/tokenIsValid";
+import MyMapComponent from "../components/Map";
+import "../styles/Map.css";
+import logoMeteore from "../img/logo_meteore_blanc.png";
+import icon_soleil from "../img/icon_soleil.png";
+import icon_precipitation from "../img/icon_pluie.png";
+import icon_humidite from "../img/icon_humidite.png";
 
 function Home() {
   /*
@@ -14,15 +21,26 @@ function Home() {
   });*/
   return (
     <div className="App">
-      {/*token*/}
       <div className="card-container">
         <Card
-          imageSrc="/ic_bitcoin.png"
-          imgAlt="il fait beau"
-          title="Carte météo ici mdr"
-          symbol="Lille"
-          price={10}
+          title="Température"
+          value="21°C"
+          icon="src/img/icon_soleil.png"
+          valueMin="10°C"
+          valueMax="25°C"
         />
+      </div>
+      <div className="card-container">
+        <Card
+          title="Précipitation"
+          value="30mm"
+          icon="src/img/icon_pluie.png"
+          valueMin="15mm"
+          valueMax="35mm"
+        />
+      </div>
+      <div className="map-container">
+        <MyMapComponent />
       </div>
     </div>
   );
