@@ -1,10 +1,9 @@
 .card-container {
     display: flex;
-    flex-wrap: wrap;
     justify-content: center;
     max-width: 960px;
     margin: 0 auto;
-    align-items: center;
+    align-items: flex-start;
 }
 
 .card {
@@ -18,15 +17,9 @@
     padding: 24px;
     margin: 16px;
     transition: all 0.3s ease-in-out;
-    width: 300px;
+    width: calc((100% - 48px) / 3);
+    /* Modifier cette ligne */
     max-width: 100%;
-    flex: 0 0 33.33%;
-}
-
-
-.card:hover {
-    transform: translateY(-8px);
-    box-shadow: 0 0 24px rgba(0, 0, 0, 0.2);
 }
 
 .card-img-top {
