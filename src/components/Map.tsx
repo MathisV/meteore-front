@@ -8,8 +8,8 @@ function MyMapComponent() {
       "pk.eyJ1IjoidGltb3RoZWVyaW91IiwiYSI6ImNsaTdoNDEzNDFpOWozZG1sNzlhOXk3MnUifQ.gOtqKpJ4vQu4hMcq7Nclhg";
     var map = new mapboxgl.Map({
       container: "map",
-      style: "mapbox://styles/mapbox/light-v11",
-      //style: "mapbox://styles/mapbox/dark-v11",
+      //style: "mapbox://styles/mapbox/light-v11",
+      style: "mapbox://styles/mapbox/dark-v11",
       center: [1.888334, 46.603354], // position de départ
       zoom: 5, // niveau de zoom de départ
     });
@@ -21,32 +21,42 @@ function MyMapComponent() {
 
     // Clé API OpenWeatherMap
     //var apiKey = 'votre_cle_api';
+    var cities = ["Paris", "Lille", "Marseille", "Bordeaux", "Lyon", "Montpellier", "Toulouse", "Nantes", "Strasbourg", "Nice", "Brest",
+    "Rennes", "Reims", "Toulon", "Grenoble", "Dijon", "Angers", "Nimes", "Saint-Denis", "Aix-en-Provence"];
+    
+    cities.forEach(city => {
 
-    // URL pour la requête API
-    //var weatherUrl = `http://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&appid=${apiKey}`;
 
-    //fetch(weatherUrl)
-    //.then(response => response.json())
+      // URL pour la requête API
+      var apiUrl = `http://localhost:3000/weather/city/`+city;
 
-    // Crée un élément HTML pour le marqueur
-    var el = document.createElement("div");
-    el.className = "marker";
-    el.style.background = "transparent";
-    el.style.width = "50px";
-    el.style.height = "50px";
-    el.style.color = "black";
-    el.innerHTML = `33°C`;
+      fetch(apiUrl)
+      .then(response => response.json())
+      .then(data => {
+        // Crée un élément HTML pour le marqueur
+        var el = document.createElement("div");
+        el.className = "marker";
+        el.style.background = "transparent";
+        el.style.width = "5vw";
+        el.style.height = "5vh";
+        el.style.color = "white";
+        el.innerHTML = Math.round(data["data"]["temperature"])+`°C`;
 
-    // Crée un popup avec plus d'informations
-    var popup = new mapboxgl.Popup({ offset: 25 }).setHTML(
-      `<h3>test</h3><p>Température : test_temp°C</p><p>Humidité : test_humidity%</p>`
-    );
+        lon = data["lon"];
+        lat = data["lat"];
 
-    // Crée le marqueur et l'ajoute à la carte
-    new mapboxgl.Marker(el)
-      .setLngLat([lon, lat])
-      .setPopup(popup) // Associe le popup au marqueur
-      .addTo(map);
+        // Crée un popup avec plus d'informations
+        var popup = new mapboxgl.Popup({ offset: 25 }).setHTML(
+          `<h3>`+data["city"]+`</h3><p>Température : `+data["data"]["temperature"]+`°C</p><p>Humidité : `+data["data"]["humidity"]+`%</p>`
+        );
+
+        // Crée le marqueur et l'ajoute à la carte
+        new mapboxgl.Marker(el)
+          .setLngLat([lon, lat])
+          .setPopup(popup) // Associe le popup au marqueur
+          .addTo(map);
+      });
+    });
   });
   return <div id="map" style={{ width: "100%", height: "100%" }}></div>;
 }
