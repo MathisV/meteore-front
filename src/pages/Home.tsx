@@ -5,6 +5,8 @@ import "../styles/Navbar.css";
 import Card from "../components/Card";
 import tokenIsValid from "../middleware/tokenIsValid";
 import MyMapComponent from "../components/Map";
+import SearchBar from "../components/SearchBar";
+import axios from "axios";
 import "../styles/Map.css";
 import logoMeteore from "../img/logo_meteore_blanc.png";
 import icon_soleil from "../img/icon_soleil.png";
@@ -19,8 +21,26 @@ function Home() {
       window.location.href = "/connexion";
     }
   });*/
+  const handleSearch = (searchTerm: string) => {
+    axios
+      .get(`http://localhost:3000/weather/city/${searchTerm}`)
+      .then((response) => {
+        const weatherData = response.data;
+        console.log("Données météo :", weatherData);
+      })
+      .catch((error) => {
+        console.error(
+          "Erreur lors de la récupération des données météo :",
+          error
+        );
+      });
+  };
+
+  // Le reste du code du composant Home
+
   return (
     <div className="App">
+      <SearchBar onSearch={handleSearch} /> {/* Ajoutez cette ligne */}
       <div className="card-container">
         <Card
           title="Température"
