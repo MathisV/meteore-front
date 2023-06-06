@@ -1,0 +1,38 @@
+/* Recherche */
+.search-bar {
+    display: flex;
+    align-items: center;
+    max-width: 300px;
+    margin: 10px auto;
+    padding: 8px;
+    background-color: #f0f0f0;
+    border-radius: 20px;
+}
+
+.search-bar input {
+    flex: 1;
+    margin-left: 8px;
+    border: none;
+    outline: none;
+    font-size: 16px;
+    color: #333;
+    background-color: transparent;
+}
+
+.search-bar input::placeholder {
+    color: #999;
+}
+
+.search-bar button {
+    background-color: transparent;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    margin-left: 8px;
+}
+
+.search-bar button svg {
+    width: 24px;
+    height: 24px;
+    fill: #999;
+}

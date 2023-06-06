@@ -4,6 +4,7 @@ import { BrowserRouter, Route, Routes } from "react-router-dom";
 import "./styles/style.css";
 import "./styles/index.css";
 import Home from "./pages/Home";
+import Details from "./pages/Details";
 import Connexion from "./pages/Connexion";
 import reportWebVitals from "./reportWebVitals";
 import Navbar from "./components/Navbar";
@@ -13,11 +14,13 @@ const root = ReactDOM.createRoot(
 );
 root.render(
   <React.StrictMode>
-    <Navbar />
     <BrowserRouter>
+
+      <Navbar />
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/connexion" element={<Connexion />} />
+        <Route path="/details/:searchTerm" element={<Details />} />
       </Routes>
     </BrowserRouter>
   </React.StrictMode>

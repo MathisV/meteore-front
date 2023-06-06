@@ -16,12 +16,12 @@ function MyMapComponent() {
       zoom: 5, // niveau de zoom de départ
     });
 
-
     var cities = ["Paris", "Lille"]; //, "Marseille", "Bordeaux", "Lyon", "Montpellier", "Toulouse", "Nantes", "Strasbourg", "Nice", "Brest", "Rennes", "Reims", "Toulon", "Grenoble", "Dijon", "Angers", "Nimes", "Aix-en-Provence"];
 
     cities.forEach(async city => {
       // URL pour la requête API
-      var apiUrl = `http://localhost:3000/weather/city/` + city + `/france`;
+      var apiUrl = `http://localhost:3000/weather/city/` + city + `/FR`;
+
       fetch(apiUrl)
         .then(response => response.json())
         .then(data => {
