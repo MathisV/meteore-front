@@ -2,10 +2,6 @@
 export default async function HandleSearch(searchTerm: (string | undefined)) {
     var weatherData: any = await getWeather(searchTerm);
     var forecastData: any = await getForecast(searchTerm);
-
-
-
-
     return { weatherData, forecastData }
 };
 
@@ -17,7 +13,7 @@ function getWeather(searchTerm: (string | undefined)) {
                 console.log("Erreur lors de la récupération des données météo");
                 return;
             }
-            return response.data;
+            return response;
         })
 }
 
