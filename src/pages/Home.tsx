@@ -2,6 +2,7 @@ import React from "react";
 import "../styles/style.css";
 import "../styles/Card.css";
 import "../styles/Navbar.css";
+import "../styles/SearchBar.css";
 import Card from "../components/Card";
 import tokenIsValid from "../middleware/tokenIsValid";
 import MyMapComponent from "../components/Map";
@@ -21,26 +22,11 @@ function Home() {
       window.location.href = "/connexion";
     }
   });*/
-  const handleSearch = (searchTerm: string) => {
-    axios
-      .get(`http://localhost:3000/weather/city/${searchTerm}`)
-      .then((response) => {
-        const weatherData = response.data;
-        console.log("Données météo :", weatherData);
-      })
-      .catch((error) => {
-        console.error(
-          "Erreur lors de la récupération des données météo :",
-          error
-        );
-      });
-  };
 
   // Le reste du code du composant Home
 
   return (
     <div className="App">
-      <SearchBar onSearch={handleSearch} /> {/* Ajoutez cette ligne */}
       <div className="card-container">
         <Card
           title="Température"
