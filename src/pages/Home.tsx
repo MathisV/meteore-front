@@ -50,6 +50,7 @@ function Home() {
           valueMax="35%"
         />
       </div>
+
       <div className="map-container">
         <MyMapComponent />
       </div>

@@ -15,11 +15,16 @@
     border-radius: 8px;
     box-shadow: 0 0 16px rgba(0, 0, 0, 0.1);
     padding: 24px;
-    margin: 16px;
+    margin: 16px 0px 16px 0px;
     transition: all 0.3s ease-in-out;
-    width: calc((100% - 48px) / 3);
+    /*width: calc((100% - 48px) / 3);*/
     /* Modifier cette ligne */
     max-width: 100%;
+}
+
+.home-card {
+    margin: 16px;
+    width: calc((100% - 48px) / 3);
 }
 
 .card-img-top {

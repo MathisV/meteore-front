@@ -21,12 +21,13 @@
     /*background-color: #ffffff;*/
 }
 
+
+
 .navbar-links {
     display: flex;
-    justify-content: center;
     align-items: center;
-    width: 100%;
 }
+
 
 .navbar-links a {
     margin: 0 20px;
@@ -63,6 +64,5 @@
 .logoMeteore {
     width: 30px;
     height: 30px;
-    position: absolute;
-    left: 20px;
+    margin-right: 10px;
 }

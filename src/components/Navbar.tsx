@@ -21,10 +21,15 @@ export default function Navbar() {
     <nav className="navbar">
       <img src={logoMeteore} className="logoMeteore" alt="logoMeteore" />
       <div className="titreNavbar">Météore</div>
+      <SearchBar
+        onSearch={() => {
+          /*TODO*/
+        }}
+      />{" "}
+      {/* Ajoutez cette ligne */}
       <div className="navbar-links">
         <a href="/">Accueil</a>
         <a href="/">A propos</a>
-        <SearchBar onSearch={() => {/*TODO*/ }} /> {/* Ajoutez cette ligne */}
         {/*LoginOrLogoutButton*/}
       </div>
     </nav>
