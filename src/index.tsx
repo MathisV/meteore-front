@@ -15,7 +15,6 @@ const root = ReactDOM.createRoot(
 root.render(
   <React.StrictMode>
     <BrowserRouter>
-
       <Navbar />
       <Routes>
         <Route path="/" element={<Home />} />
@@ -23,6 +22,11 @@ root.render(
         <Route path="/details/:searchTerm" element={<Details />} />
       </Routes>
     </BrowserRouter>
+    <footer>
+      <div className="footer">
+        <p>Mail support : support.meteore@gmail.com</p>
+      </div>
+    </footer>
   </React.StrictMode>
 );
 

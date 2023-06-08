@@ -5,11 +5,11 @@
 }
 
 .map-container {
-    position: fixed;
+    /*position: fixed;*/
     bottom: 0;
     left: 0;
     right: 0;
-    height: 60vh;
+    height: calc(85vh - var(--offset));
     border-radius: 8px;
     border: 2px solid #ddd;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);

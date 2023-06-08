@@ -27,30 +27,6 @@ function Home() {
 
   return (
     <div className="App">
-      <div className="card-container">
-        <Card
-          title="Température"
-          value="21°C"
-          icon="src/img/icon_soleil.png"
-          valueMin="10°C"
-          valueMax="25°C"
-        />
-        <Card
-          title="Précipitation"
-          value="30mm"
-          icon="src/img/icon_pluie.png"
-          valueMin="15mm"
-          valueMax="35mm"
-        />
-        <Card
-          title="Humiditée"
-          value="30%"
-          icon="src/img/icon_pluie.png"
-          valueMin="15%"
-          valueMax="35%"
-        />
-      </div>
-
       <div className="map-container">
         <MyMapComponent />
       </div>

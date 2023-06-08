@@ -4,7 +4,6 @@ import "../styles/style.css";
 import { wait } from "@testing-library/user-event/dist/utils";
 
 function MyMapComponent() {
-
   useEffect(() => {
     mapboxgl.accessToken =
       "pk.eyJ1IjoidGltb3RoZWVyaW91IiwiYSI6ImNsaTdoNDEzNDFpOWozZG1sNzlhOXk3MnUifQ.gOtqKpJ4vQu4hMcq7Nclhg";
@@ -16,15 +15,35 @@ function MyMapComponent() {
       zoom: 5, // niveau de zoom de départ
     });
 
-    var cities = ["Paris", "Lille"]; //, "Marseille", "Bordeaux", "Lyon", "Montpellier", "Toulouse", "Nantes", "Strasbourg", "Nice", "Brest", "Rennes", "Reims", "Toulon", "Grenoble", "Dijon", "Angers", "Nimes", "Aix-en-Provence"];
+    var cities = [
+      "Paris",
+      "Lille",
+      "Marseille",
+      "Bordeaux",
+      "Lyon",
+      "Montpellier",
+      "Toulouse",
+      "Nantes",
+      "Strasbourg",
+      "Nice",
+      "Brest",
+      "Rennes",
+      "Reims",
+      "Toulon",
+      "Grenoble",
+      "Dijon",
+      "Angers",
+      "Nimes",
+      "Aix-en-Provence",
+    ];
 
-    cities.forEach(async city => {
+    cities.forEach(async (city) => {
       // URL pour la requête API
       var apiUrl = `http://localhost:3000/weather/city/` + city + `/FR`;
 
       fetch(apiUrl)
-        .then(response => response.json())
-        .then(data => {
+        .then((response) => response.json())
+        .then((data) => {
           // Crée un élément HTML pour le marqueur
           var el = document.createElement("div");
           el.className = "marker";
@@ -39,7 +58,13 @@ function MyMapComponent() {
 
           // Crée un popup avec plus d'informations
           var popup = new mapboxgl.Popup({ offset: 25 }).setHTML(
-            `<h3>` + data["city"] + `</h3><p>Température : ` + data["data"]["temperature"] + `°C</p><p>Humidité : ` + data["data"]["humidity"] + `%</p>`
+            `<h3>` +
+              data["city"] +
+              `</h3><p>Température : ` +
+              data["data"]["temperature"] +
+              `°C</p><p>Humidité : ` +
+              data["data"]["humidity"] +
+              `%</p>`
           );
 
           // Crée le marqueur et l'ajoute à la carte

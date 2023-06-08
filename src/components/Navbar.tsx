@@ -29,7 +29,7 @@ export default function Navbar() {
       {/* Ajoutez cette ligne */}
       <div className="navbar-links">
         <a href="/">Accueil</a>
-        <a href="/">A propos</a>
+        <a href="/">Vigilence météo</a>
         {/*LoginOrLogoutButton*/}
       </div>
     </nav>
