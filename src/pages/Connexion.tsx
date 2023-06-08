@@ -1,7 +1,5 @@
-import { response } from "express";
 import "../styles/style.css";
 import React from "react";
-import LoginButton from "../components/Navbar";
 export default function Connexion() {
   return (
     <div className="App">

@@ -1,7 +1,6 @@
-import React, { useEffect, useState } from "react";
+import { useEffect } from "react";
 import mapboxgl from "mapbox-gl";
 import "../styles/style.css";
-import { wait } from "@testing-library/user-event/dist/utils";
 
 function MyMapComponent() {
   useEffect(() => {

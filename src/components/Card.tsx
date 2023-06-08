@@ -1,7 +1,4 @@
 import React from "react";
-import icon_soleil from "../img/icon_soleil.png";
-import icon_precipitation from "../img/icon_pluie.png";
-import icon_humidite from "../img/icon_humidite.png";
 import "../styles/Card.css";
 
 type CardProps = {

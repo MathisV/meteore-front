@@ -1,6 +1,3 @@
-import { exit } from "process";
-
-
 export default async function tokenIsValid() {
     // Check if the token "JWT" in SessionStorage is valid
     // by colling api/user/isAuthenticated

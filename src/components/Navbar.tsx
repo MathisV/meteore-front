@@ -1,14 +1,10 @@
-import React from "react";
 import "../styles/Boutton.css";
 //import LoginButton from "../pages/Connexion";
-import tokenIsValid from "../middleware/tokenIsValid";
 import logoMeteore from "../img/logo_meteore_blanc.png";
 import SearchBar from "./SearchBar";
-import HandleSearch from "../middleware/HandleSearch";
-import { Navigate } from "react-router-dom";
 
 export default function Navbar() {
-  var LoginOrLogoutButton = LogoutButton;
+  //var LoginOrLogoutButton = LogoutButton;
 
   /*const token = sessionStorage.getItem("JWT");
   tokenIsValid().then((tokenValidity) => {
@@ -36,10 +32,10 @@ export default function Navbar() {
   );
 }
 
-function LogoutButton() {
-  return <a href="/Logout">Logout</a>;
-}
+// function LogoutButton() {
+//   return <a href="/Logout">Logout</a>;
+// }
 
-function LoginButton() {
-  return <a href="/Connexion">Connexion</a>;
-}
+// function LoginButton() {
+//   return <a href="/Connexion">Connexion</a>;
+// }
